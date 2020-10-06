@@ -1,7 +1,7 @@
 def sort(i):
 	return i[1]
 
-with open('4p88_in.txt', 'r', encoding='utf-8') as f:
+with open('4p88_in.txt', 'r') as f:
 	words = f.readlines()
 
 each = []
@@ -17,6 +17,6 @@ counting.sort(key=sort, reverse = True)
 
 with open('4p88_out.txt', 'w', encoding='utf-8') as f:
 	for el in counting:
-		for i in range(el[1] - 1):
+		for i in range(el[1]):
 			f.write(el[0])  
 
