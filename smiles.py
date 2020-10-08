@@ -1,30 +1,24 @@
 s = input("Enter string: ")
-c_count = 0
-s_count = 0
-f_count = 0
+symbols = ('(', ')', '[', ']', '{', '}')
 
 for i in s:
-	if c_count < 0 or s_count < 0 or f_count < 0:
-		print("Скобки расставлены неверно")
+	if i not in symbols:
+		print("Строка введена неверно!")
 		exit()
 
-	if i == '(':
-		c_count += 1
-	elif i == "[":
-		s_count += 1
-	elif i == "{":
-		f_count += 1
-	elif i == ")":
-		c_count -= 1
-	elif i == "]":
-		s_count -= 1
-	elif i == "}":
-		f_count -= 1
+while True:
+	if s.find("()") != -1:
+		s = s.replace('()', '')
+	elif s.find("[]") != -1:
+		s = s.replace('[]', '')
+	elif s.find(r"{}") != -1:
+		s = s.replace(r'{}', '')
 	else:
-		print("Строка введена неверно")
-		exit()
+		if s == '':
+			print("Скобки расставлены верно")
+			break
+		else:
+			print("Скобки расставлены неверно")
+			break
 
-if c_count != 0 or s_count != 0 or f_count != 0:
-	print("Скобки расставлены неверно")
-else:
-	print("Скобки расставлены верно")
+
