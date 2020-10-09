@@ -19,7 +19,7 @@ start_x, start_y = start_point
 
 
 color = matrix[start_y][start_x]
-new_color = int(input("Enter your color (0-2): "))
+new_color = int(input("Enter your color (0-3): "))
 if color == new_color:
 	matrix_output()
 
