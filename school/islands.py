@@ -1,34 +1,7 @@
-def print_matrix():
-    print()
-    for i in matrix:
-        print(i)
-    print()
+from Matrix import printMatrix, generateMatrix
 
-from random import randint as rand
-matrix_height = 5
-matrix_width = 5
-value_from = 0
-value_to = 1
-repeat_possible = True
-#--------------MATRIX GENERATION----------------------------
-if not repeat_possible:
-    if value_to - value_from + 1 < matrix_height*matrix_width:
-        print('Некорректная настройка матрицы!')
-        quit()
-matrix = []
-row = []
-elements = []
-for r in range(matrix_height):
-    row = []
-    for i in range(matrix_width):
-        a = rand(value_from, value_to)
-        if not repeat_possible:
-            while a in elements:
-                a = rand(value_from, value_to)
-        row.append(a)
-        elements.append(a) 
-    matrix.append(row)
-#-----------------------------------------------------------
+matrix = generateMatrix(5, 5, 0, 1, True)
+
 WIDTH = len(matrix[0])
 HEIGHT = len(matrix)
 y_m = 0
@@ -69,8 +42,8 @@ for i in matrix:
         x_m += 1
     y_m += 1
 
-print("MATRIX".center(matrix_width*3, "-"))
-print_matrix()
+print("MATRIX".center(WIDTH*3, "-"))
+printMatrix()
 print("Островов: ", islands_amount)
 
 
