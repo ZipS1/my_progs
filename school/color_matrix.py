@@ -1,16 +1,34 @@
 def print_matrix():
+    print()
     for i in matrix:
         print(i)
+    print()
 
-import random
-
-matrix = [[0,1,0,1,1],
-          [1,1,1,2,2],
-          [0,1,0,2,2],
-          [3,3,1,2,2],
-          [0,1,1,0,0]]
-
-# matrix[y][x]
+from random import randint as rand
+matrix_height = 5
+matrix_width = 5
+value_from = 1
+value_to = 3
+repeat_possible = True
+#--------------MATRIX GENERATION----------------------------
+if not repeat_possible:
+    if value_to - value_from + 1 < matrix_height*matrix_width:
+        print('Некорректная настройка матрицы!')
+        quit()
+matrix = []
+row = []
+elements = []
+for r in range(matrix_height):
+    row = []
+    for i in range(matrix_width):
+        a = rand(value_from, value_to)
+        if not repeat_possible:
+            while a in elements:
+                a = rand(value_from, value_to)
+        row.append(a)
+        elements.append(a) 
+    matrix.append(row)
+#-----------------------------------------------------------
 
 print_matrix()
 start_point = input("Enter starting point (x, y): ").split()
@@ -21,11 +39,9 @@ start_x, start_y = start_point
 color = matrix[start_y][start_x]
 new_color = int(input("Enter your color (0-3): "))
 if color == new_color:
-    matrix_output()
+    print_matrix()
 
 c_point = (start_y, start_x)
-
-
 
 area = [c_point]
 
