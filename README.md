@@ -3,7 +3,7 @@ This is my personal repository.
 Here I add my own progs and files.
 
 # Python Zen
-Beautiful is better than ugly. /n
+Beautiful is better than ugly.
 Explicit is better than implicit.
 Simple is better than complex.
 Complex is better than complicated.
