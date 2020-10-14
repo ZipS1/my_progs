@@ -2,7 +2,7 @@ Hello everyone!
 This is my personal repository.
 Here I add my own progs and files.
 
-#python zen
+# Python Zen
 Beautiful is better than ugly.
 Explicit is better than implicit.
 Simple is better than complex.
