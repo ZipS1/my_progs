@@ -3,7 +3,7 @@ import keyboard
 import sys
 
 
-def Translate(s):
+def translate(s):
     translator = Translator()
     if translator.detect(s).lang == "en":
         result = translator.translate(s, dest="ru")
@@ -15,7 +15,7 @@ WIDTH = 80
 
 print("TRANSLATOR".center(WIDTH, '-'))
 s = input("Введите фразу для перевода:")
-Translate(s)
+translate(s)
 print("Для выхода нажмите клавишу Enter...")
 while True:
     if keyboard.is_pressed("enter"):
