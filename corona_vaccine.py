@@ -4,10 +4,11 @@ import sys
 
 cwd = os.getcwd()
 pyfiles = glob.glob(f"{cwd}/*py")
+def_encoding = sys.getdefaultencoding()
 tags = ("corona", "ucorona", "uucorona")
 
 for path in pyfiles:
-    with open(path, 'r', encoding=sys.getdefaultencoding()) as f:
+    with open(path, 'r', encoding=def_encoding) as f:
         lines = f.readlines()
 
     for tag in tags:
@@ -19,7 +20,7 @@ for path in pyfiles:
                 lines.pop(ind)
             lines.pop(ind)
 
-    with open(path, 'w', encoding=sys.getdefaultencoding()) as f:
+    with open(path, 'w', encoding=def_encoding) as f:
         f.writelines(lines)
 
 
