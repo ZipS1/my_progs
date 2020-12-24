@@ -1,12 +1,13 @@
 import os
 import glob
+import sys
 
 cwd = os.getcwd()
 pyfiles = glob.glob(f"{cwd}/*py")
 tags = ("corona", "ucorona", "uucorona")
 
 for path in pyfiles:
-    with open(path, 'r') as f:
+    with open(path, 'r', sys.getdefaultencoding()) as f:
         lines = f.readlines()
 
     for tag in tags:
@@ -18,7 +19,7 @@ for path in pyfiles:
                 lines.pop(ind)
             lines.pop(ind)
 
-    with open(path, 'w') as f:
+    with open(path, 'w', sys.getdefaultencoding()) as f:
         f.writelines(lines)
 
 
