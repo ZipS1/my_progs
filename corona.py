@@ -17,7 +17,7 @@ with open(__file__, 'r', encoding=def_encoding) as f:
             break
 
 for path in pyfiles:
-    with open(path, 'r', eencoding=def_encoding) as f:
+    with open(path, 'r', encoding=def_encoding) as f:
         line = f.readline()
         if line != "# corona0\n":
             healthy.append(path)
