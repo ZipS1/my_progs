@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/4114167/checking-if-a-number-is-a-prime-number-in-python
+https://habr.com/ru/post/337420/
