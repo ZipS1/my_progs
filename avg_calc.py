@@ -1,3 +1,4 @@
+# TODO: make counter, how many 5s you need to have 4.5 average
 print("Welcome to average number calculator!")
 
 nums = []
